@@ -4,6 +4,7 @@ import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import MarqueeStrip from "@/components/ui/marquee-strip";
 import Services from "@/components/sections/services";
+import BrushDivider from "@/components/ui/brush-divider";
 import Gallery from "@/components/sections/gallery";
 import Reviews from "@/components/sections/reviews";
 import Footer from "@/components/sections/footer";
@@ -18,6 +19,7 @@ export default function Home() {
       <About onBooking={chat.openChat} />
       <MarqueeStrip />
       <Services />
+      <BrushDivider />
       <Gallery />
       <Reviews onBooking={chat.openChat} />
       <Footer />
