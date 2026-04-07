@@ -7,7 +7,7 @@ const FRAME_COUNT = 144;
 const framePath = (i: number) =>
   `/frames/frame_${String(i).padStart(4, "0")}.jpg`;
 
-export default function Hero() {
+export default function Hero({ onBooking }: { onBooking?: () => void }) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -134,7 +134,7 @@ export default function Hero() {
             Rouge Nails
           </span>
           <div className="flex justify-center animate-fade-up delay-600">
-            <NavHeader />
+            <NavHeader onBooking={onBooking} />
           </div>
         </div>
 

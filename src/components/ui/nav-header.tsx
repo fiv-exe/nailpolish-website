@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 type Position = { left: number; width: number; opacity: number };
 
-const items: { label: string; href: string; highlight?: boolean }[] = [
+const items: { label: string; href?: string; action?: boolean; highlight?: boolean }[] = [
   { label: "Über uns", href: "#ueber-uns" },
   { label: "Leistungen", href: "#leistungen" },
-  { label: "Termin buchen", href: "#kontakt", highlight: true },
+  { label: "Termin buchen", action: true, highlight: true },
   { label: "Arbeiten", href: "#arbeiten" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
-export default function NavHeader() {
+export default function NavHeader({ onBooking }: { onBooking?: () => void }) {
   const [position, setPosition] = useState<Position>({
     left: 0,
     width: 0,
@@ -26,7 +26,13 @@ export default function NavHeader() {
       onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
     >
       {items.map((item) => (
-        <Tab key={item.label} href={item.href} highlight={item.highlight} setPosition={setPosition}>
+        <Tab
+          key={item.label}
+          href={item.href}
+          highlight={item.highlight}
+          onClick={item.action ? onBooking : undefined}
+          setPosition={setPosition}
+        >
           {item.label}
         </Tab>
       ))}
@@ -39,14 +45,24 @@ function Tab({
   children,
   href,
   highlight,
+  onClick,
   setPosition,
 }: {
   children: React.ReactNode;
-  href: string;
+  href?: string;
   highlight?: boolean;
+  onClick?: () => void;
   setPosition: React.Dispatch<React.SetStateAction<Position>>;
 }) {
   const ref = useRef<HTMLLIElement>(null);
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <li
       ref={ref}
@@ -62,7 +78,8 @@ function Tab({
       className="relative z-10 block text-[#3a0610]"
     >
       <a
-        href={href}
+        href={href || "#"}
+        onClick={handleClick}
         className={
           "block cursor-pointer px-4 py-2 uppercase " +
           (highlight

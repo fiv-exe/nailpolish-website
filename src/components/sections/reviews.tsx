@@ -146,7 +146,7 @@ function MarqueeRow({
   );
 }
 
-export default function Reviews() {
+export default function Reviews({ onBooking }: { onBooking?: () => void }) {
   return (
     <section id="bewertungen" className="relative py-32 md:py-48 px-6 md:px-12">
       <style>{`
@@ -194,13 +194,13 @@ export default function Reviews() {
         <p className="text-sm md:text-base text-[#3a0610]/65 font-light">
           Überzeugt? Sichern Sie sich Ihren Wunschtermin.
         </p>
-        <a
-          href="#kontakt"
-          className="group inline-flex items-center gap-4 bg-[#8b0a1a] text-[#f7f1ea] px-10 py-4 text-[0.7rem] uppercase tracking-[0.3em] font-light transition-all duration-500 hover:bg-[#a01025]"
+        <button
+          onClick={onBooking}
+          className="group inline-flex items-center gap-4 bg-[#8b0a1a] text-[#f7f1ea] px-10 py-4 text-[0.7rem] uppercase tracking-[0.3em] font-light transition-all duration-500 hover:bg-[#a01025] cursor-pointer"
         >
           Jetzt Termin buchen
           <span className="w-5 h-px bg-[#f7f1ea]/70 transition-all duration-500 group-hover:w-9" />
-        </a>
+        </button>
       </div>
     </section>
   );

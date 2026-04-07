@@ -48,7 +48,7 @@ function SlideIn({ children, from, delay = 0, className = "" }: SlideProps) {
   );
 }
 
-export default function About() {
+export default function About({ onBooking }: { onBooking?: () => void }) {
   return (
     <section id="ueber-uns" className="relative py-32 md:py-48 px-6 md:px-12 overflow-hidden">
       <div className="max-w-5xl mx-auto">
@@ -104,13 +104,13 @@ export default function About() {
 
             <SlideIn from="left" delay={0.55}>
               <div className="pt-6">
-                <a
-                  href="#kontakt"
-                  className="group inline-flex items-center gap-4 border border-[#3a0610]/30 text-[#3a0610] px-8 py-3.5 text-[0.7rem] uppercase tracking-[0.3em] font-light transition-all duration-500 hover:bg-[#3a0610] hover:text-[#f7f1ea] hover:border-[#3a0610]"
+                <button
+                  onClick={onBooking}
+                  className="group inline-flex items-center gap-4 border border-[#3a0610]/30 text-[#3a0610] px-8 py-3.5 text-[0.7rem] uppercase tracking-[0.3em] font-light transition-all duration-500 hover:bg-[#3a0610] hover:text-[#f7f1ea] hover:border-[#3a0610] cursor-pointer"
                 >
                   Termin buchen
                   <span className="w-5 h-px bg-current transition-all duration-500 group-hover:w-8" />
-                </a>
+                </button>
               </div>
             </SlideIn>
           </div>

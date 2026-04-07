@@ -1,19 +1,25 @@
+"use client";
+
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Services from "@/components/sections/services";
 import Gallery from "@/components/sections/gallery";
 import Reviews from "@/components/sections/reviews";
 import Footer from "@/components/sections/footer";
+import ChatWidget, { useChatWidget } from "@/components/ui/chat-widget";
 
 export default function Home() {
+  const chat = useChatWidget();
+
   return (
     <>
-      <Hero />
-      <About />
+      <Hero onBooking={chat.openChat} />
+      <About onBooking={chat.openChat} />
       <Services />
       <Gallery />
-      <Reviews />
+      <Reviews onBooking={chat.openChat} />
       <Footer />
+      <ChatWidget open={chat.open} onClose={() => chat.setOpen(false)} />
     </>
   );
 }
