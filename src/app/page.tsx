@@ -2,6 +2,7 @@
 
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
+import MarqueeStrip from "@/components/ui/marquee-strip";
 import Services from "@/components/sections/services";
 import Gallery from "@/components/sections/gallery";
 import Reviews from "@/components/sections/reviews";
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <Hero onBooking={chat.openChat} />
       <About onBooking={chat.openChat} />
+      <MarqueeStrip />
       <Services />
       <Gallery />
       <Reviews onBooking={chat.openChat} />
