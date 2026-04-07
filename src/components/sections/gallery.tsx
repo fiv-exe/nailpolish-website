@@ -15,12 +15,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const slides = [
-  { src: "https://picsum.photos/id/249/500/750", label: "Almond · Nude" },
-  { src: "https://picsum.photos/id/1062/500/750", label: "Stiletto · Rouge" },
-  { src: "https://picsum.photos/id/1074/500/750", label: "Square · Rosé" },
-  { src: "https://picsum.photos/id/164/500/750", label: "Coffin · Chrome" },
-  { src: "https://picsum.photos/id/250/500/750", label: "Oval · French" },
-  { src: "https://picsum.photos/id/399/500/750", label: "Round · Noir" },
+  { src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=750&fit=crop&auto=format&q=80", label: "Almond · Nude" },
+  { src: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=500&h=750&fit=crop&auto=format&q=80", label: "Stiletto · Rouge" },
+  { src: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=500&h=750&fit=crop&auto=format&q=80", label: "Square · Rosé" },
+  { src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=500&h=750&fit=crop&auto=format&q=80", label: "Coffin · Chrome" },
+  { src: "https://images.unsplash.com/photo-1571290274554-6a2eaa74d75b?w=500&h=750&fit=crop&auto=format&q=80", label: "Oval · French" },
+  { src: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=500&h=750&fit=crop&auto=format&q=80", label: "Round · Noir" },
 ];
 
 const swiperCSS = `
