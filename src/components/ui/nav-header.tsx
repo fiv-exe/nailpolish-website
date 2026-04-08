@@ -22,7 +22,7 @@ export default function NavHeader({ onBooking }: { onBooking?: () => void }) {
 
   return (
     <ul
-      className="relative mx-auto flex w-fit rounded-full border-2 border-[#3a0610] bg-[#f7f1ea] p-0.5 md:p-1"
+      className="relative mx-auto flex w-fit rounded-full border-2 border-[#3a0610] bg-[#f7f1ea] p-1 md:p-1"
       onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
     >
       {items.map((item) => (
@@ -85,8 +85,8 @@ function Tab({
         className={
           "block cursor-pointer uppercase " +
           (highlight
-            ? "px-2.5 py-1.5 text-[0.55rem] tracking-[0.12em] font-medium md:px-9 md:py-3.5 md:text-[0.85rem] md:tracking-[0.28em]"
-            : "px-2.5 py-1.5 text-[0.5rem] tracking-[0.1em] md:px-9 md:py-3.5 md:text-[0.75rem] md:tracking-[0.32em]")
+            ? "px-3 py-2 text-[0.6rem] tracking-[0.14em] font-medium md:px-9 md:py-3.5 md:text-[0.85rem] md:tracking-[0.28em]"
+            : "px-3 py-2 text-[0.55rem] tracking-[0.12em] md:px-9 md:py-3.5 md:text-[0.75rem] md:tracking-[0.32em]")
         }
       >
         <span className="md:hidden">{mobileLabel || label}</span>
@@ -100,7 +100,7 @@ function Cursor({ position }: { position: Position }) {
   return (
     <motion.li
       animate={position}
-      className="absolute z-0 h-7 rounded-full bg-[#8b0a1a]/15 border border-[#8b0a1a]/40 md:h-12"
+      className="absolute z-0 h-8 rounded-full bg-[#8b0a1a]/15 border border-[#8b0a1a]/40 md:h-12"
     />
   );
 }
